@@ -9,12 +9,13 @@
     "test": "vitest run"
   },
   "imports": {
+    "idb": "npm:idb@^8.0.3",
     "preact": "npm:preact@^10.27.2",
-    "@preact/preset-vite": "npm:@preact/preset-vite@^2.10.2",
+    "@preact/preset-vite": "npm:@preact/preset-vite@^2.10.5",
     "@types/node": "npm:@types/node@^24.10.1",
     "typescript": "npm:typescript@~5.9.3",
-    "vite": "npm:rolldown-vite@7.2.5",
+    "vite": "npm:vite@^8.0.0",
     "vitest": "npm:vitest@^3.0.0"
   },
-  "minimumDependencyAge": "P30D"
+  "minimumDependencyAge": "P7D"
 }
