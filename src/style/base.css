@@ -1,0 +1,118 @@
+:root {
+  --color-bg: #14161a;
+  --color-bg-elevated: #1c1f24;
+  --color-bg-input: #232730;
+  --color-border: #2a2f38;
+  --color-text: #e8eaed;
+  --color-text-muted: #9aa0aa;
+  --color-text-faint: #5d626d;
+
+  --color-primary: #4a9eff;
+  --color-primary-hover: #6db0ff;
+  --color-primary-active: #2d7ddb;
+
+  --color-success: #4caf50;
+  --color-warning: #ffa726;
+  --color-danger: #ef5350;
+
+  --color-state-done: #4caf50;
+  --color-state-failed: #ef5350;
+  --color-state-easy: #29b6f6;
+  --color-state-locked: #5d626d;
+  --color-state-unlocked: #ffa726;
+  --color-state-active: #4a9eff;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+
+  --max-content-width: 720px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 var(--space-3) 0;
+  line-height: var(--line-height-tight);
+  font-weight: 600;
+}
+
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-xl); }
+h4 { font-size: var(--font-size-lg); }
+
+p {
+  margin: 0 0 var(--space-3) 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+ul, ol {
+  margin: 0;
+  padding-left: var(--space-5);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--color-bg-input);
+  padding: 0.1em 0.3em;
+  border-radius: var(--radius-sm);
+}

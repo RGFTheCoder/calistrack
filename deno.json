@@ -15,7 +15,8 @@
     "idb": "npm:idb@^8.0.3",
     "typescript": "npm:typescript@~5.9.3",
     "vite": "npm:vite@^8.0.0",
-    "vitest": "npm:vitest@^3.0.0"
+    "vitest": "npm:vitest@^3.0.0",
+    "jsdom": "npm:jsdom@^25.0.0"
   },
   "minimumDependencyAge": "P7D"
 }
