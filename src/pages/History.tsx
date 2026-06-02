@@ -1,6 +1,6 @@
 import { workoutLog } from '../state/store.ts'
 import { progressionById, allSkillById } from '../data/pathways.ts'
-import { Card, CardHeader, CardTitle, CardSubtitle, Badge } from '../components/ui/index.ts'
+import { Card, CardHeader, CardHeaderMain, CardTitle, CardSubtitle, Badge } from '../components/ui/index.ts'
 
 export function History() {
   const log = workoutLog.value
@@ -28,10 +28,10 @@ export function History() {
         return (
           <Card key={entry.startedAt}>
             <CardHeader>
-              <div style={{ flex: 1 }}>
+              <CardHeaderMain>
                 <CardTitle>{entry.date}</CardTitle>
                 <CardSubtitle>{duration} min · {entry.entries.length} exercises</CardSubtitle>
-              </div>
+              </CardHeaderMain>
             </CardHeader>
             <ul class="progression-list">
               {entry.entries.map(e => {
@@ -49,7 +49,7 @@ export function History() {
                       <strong>{lookup?.name}</strong>
                       <span class="text-muted text-small"> — {stepName}</span>
                     </span>
-                    <div class="row" style={{ gap: '0.25rem' }}>
+                    <div class="history-summary">
                       {counts.done > 0 && <Badge variant="done">{counts.done}✓</Badge>}
                       {counts.easy > 0 && <Badge variant="easy">{counts.easy}⚡</Badge>}
                       {counts.failed > 0 && <Badge variant="failed">{counts.failed}✗</Badge>}

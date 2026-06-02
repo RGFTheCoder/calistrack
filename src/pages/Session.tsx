@@ -14,6 +14,7 @@ import {
   ButtonGroup,
   Card,
   CardHeader,
+  CardHeaderMain,
   CardTitle,
   CardSubtitle,
   Badge,
@@ -105,8 +106,8 @@ export function Session() {
 
   return (
     <div class="stack">
-      <div class="row row-between">
-        <h1 style={{ margin: 0 }}>Session</h1>
+      <div class="session-header">
+        <h1>Session</h1>
         <Button variant="ghost" size="sm" onClick={() => {
           if (confirm('Cancel this session? Logged sets will be lost.')) {
             cancelSession()
@@ -124,10 +125,10 @@ export function Session() {
         return (
           <Card key={key}>
             <CardHeader>
-              <div style={{ flex: 1 }}>
+              <CardHeaderMain>
                 <CardTitle>{label.name}</CardTitle>
                 <CardSubtitle>{label.step}</CardSubtitle>
-              </div>
+              </CardHeaderMain>
               <Badge variant={remaining === 0 ? 'done' : 'active'}>
                 {sets.length}/{item.targetSets}
               </Badge>

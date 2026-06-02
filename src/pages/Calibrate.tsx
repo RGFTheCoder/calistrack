@@ -18,6 +18,7 @@ import {
   ButtonGroup,
   Card,
   CardHeader,
+  CardHeaderMain,
   CardTitle,
   CardSubtitle,
   ProgressBar,
@@ -95,10 +96,10 @@ export function Calibrate() {
 
       <Card>
         <CardHeader>
-          <div style={{ flex: 1 }}>
+          <CardHeaderMain>
             <CardTitle>Can you do {targetText} of:</CardTitle>
             <CardSubtitle>{step.name}</CardSubtitle>
-          </div>
+          </CardHeaderMain>
         </CardHeader>
 
         <p>{step.description}</p>

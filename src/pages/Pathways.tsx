@@ -1,6 +1,6 @@
 import { pathways, progressionsByPathway } from '../data/pathways.ts'
 import { userProgress } from '../state/store.ts'
-import { Card, CardHeader, CardTitle, CardSubtitle, Badge, ProgressBar } from '../components/ui/index.ts'
+import { Card, CardHeader, CardHeaderMain, CardTitle, CardSubtitle, Badge, ProgressBar } from '../components/ui/index.ts'
 
 export function Pathways() {
   const up = userProgress.value
@@ -24,10 +24,10 @@ export function Pathways() {
               return (
                 <Card key={p.id}>
                   <CardHeader>
-                    <div style={{ flex: 1 }}>
+                    <CardHeaderMain>
                       <CardTitle>{p.name}</CardTitle>
                       <CardSubtitle>Step {cur + 1} of {p.steps.length}: {step?.name}</CardSubtitle>
-                    </div>
+                    </CardHeaderMain>
                     {step && !step.noEquipment && <Badge variant="unlocked">equipment</Badge>}
                   </CardHeader>
                   {step && (
@@ -36,7 +36,7 @@ export function Pathways() {
                       <ProgressBar value={cur} max={max} label="Progress" />
                     </>
                   )}
-                  <ol class="progression-list" style={{ marginTop: '0.75rem' }}>
+                  <ol class="progression-list progression-list-detail">
                     {p.steps.map((s, i) => (
                       <li
                         key={s.id}

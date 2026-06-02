@@ -1,7 +1,7 @@
 import { skills, flexibility, progressionById } from '../data/pathways.ts'
 import { focuses, userProgress, toggleFocus } from '../state/store.ts'
 import { isSkillUnlocked } from '../state/planner.ts'
-import { Card, CardHeader, CardTitle, CardSubtitle, Badge, Button, ProgressBar } from '../components/ui/index.ts'
+import { Card, CardHeader, CardHeaderMain, CardTitle, CardSubtitle, Badge, Button, ProgressBar } from '../components/ui/index.ts'
 import type { Skill } from '../data/types.ts'
 
 function SkillCard({ skill, kind }: { skill: Skill; kind: 'skills' | 'flexibility' }) {
@@ -14,10 +14,10 @@ function SkillCard({ skill, kind }: { skill: Skill; kind: 'skills' | 'flexibilit
   return (
     <Card>
       <CardHeader>
-        <div style={{ flex: 1 }}>
+        <CardHeaderMain>
           <CardTitle>{skill.name}</CardTitle>
           <CardSubtitle>{skill.description}</CardSubtitle>
-        </div>
+        </CardHeaderMain>
         {unlocked
           ? enabled
             ? <Badge variant="active">enabled</Badge>
@@ -51,7 +51,7 @@ function SkillCard({ skill, kind }: { skill: Skill; kind: 'skills' | 'flexibilit
         </>
       )}
 
-      <div class="btn-group" style={{ marginTop: '0.75rem' }}>
+      <div class="btn-group">
         <Button
           variant={enabled ? 'secondary' : 'primary'}
           size="sm"

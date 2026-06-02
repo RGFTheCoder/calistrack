@@ -42,7 +42,7 @@ export function Home() {
 
       <Card>
         <div class="row row-between">
-          <label class="row" style={{ cursor: 'pointer' }}>
+          <label class="home-mode-toggle">
             <input
               type="checkbox"
               checked={ne.value}

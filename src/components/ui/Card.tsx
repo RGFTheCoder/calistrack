@@ -24,6 +24,10 @@ export function CardHeader({ children }: { children: ComponentChildren }) {
   return <div class="card-header">{children}</div>
 }
 
+export function CardHeaderMain({ children }: { children: ComponentChildren }) {
+  return <div class="card-header-main">{children}</div>
+}
+
 export function CardTitle({ children }: { children: ComponentChildren }) {
   return <h3 class="card-title">{children}</h3>
 }
