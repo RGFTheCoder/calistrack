@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Deno
+.deno/
+
+# Vite cache
+.vite/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
