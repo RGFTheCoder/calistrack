@@ -5,14 +5,16 @@
   "tasks": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run"
   },
   "imports": {
     "preact": "npm:preact@^10.27.2",
     "@preact/preset-vite": "npm:@preact/preset-vite@^2.10.2",
     "@types/node": "npm:@types/node@^24.10.1",
     "typescript": "npm:typescript@~5.9.3",
-    "vite": "npm:rolldown-vite@7.2.5"
+    "vite": "npm:rolldown-vite@7.2.5",
+    "vitest": "npm:vitest@^3.0.0"
   },
   "minimumDependencyAge": "P30D"
 }
