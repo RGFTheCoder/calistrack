@@ -8,10 +8,11 @@
     "test": "vitest run"
   },
   "imports": {
-    "idb": "npm:idb@^8.0.3",
     "preact": "npm:preact@^10.27.2",
     "@preact/preset-vite": "npm:@preact/preset-vite@^2.10.5",
+    "@preact/signals": "npm:@preact/signals@^2.0.0",
     "@types/node": "npm:@types/node@^24.10.1",
+    "idb": "npm:idb@^8.0.3",
     "typescript": "npm:typescript@~5.9.3",
     "vite": "npm:vite@^8.0.0",
     "vitest": "npm:vitest@^3.0.0"
