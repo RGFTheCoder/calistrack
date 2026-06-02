@@ -859,17 +859,12 @@
     }
   },
   "workspace": {
-    "packageJson": {
-      "dependencies": [
-        "npm:@preact/preset-vite@^2.10.2",
-        "npm:@types/node@^24.10.1",
-        "npm:preact@^10.27.2",
-        "npm:rolldown-vite@7.2.5",
-        "npm:typescript@~5.9.3"
-      ],
-      "overrides": {
-        "vite": "npm:rolldown-vite@7.2.5"
-      }
-    }
+    "dependencies": [
+      "npm:@preact/preset-vite@^2.10.2",
+      "npm:@types/node@^24.10.1",
+      "npm:preact@^10.27.2",
+      "npm:rolldown-vite@7.2.5",
+      "npm:typescript@~5.9.3"
+    ]
   }
 }
