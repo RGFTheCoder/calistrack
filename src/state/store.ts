@@ -25,21 +25,25 @@ export const activeSession: Signal<ActiveSession | null> = signal(null)
 
 export const noEquipmentMode: Signal<boolean> = signal(false)
 
+export const hasCalibrated: Signal<boolean> = signal(false)
+
 let persisting = false
 
 export async function hydrate(): Promise<void> {
-  const [up, log, fc, sess, ne] = await Promise.all([
+  const [up, log, fc, sess, ne, cal] = await Promise.all([
     loadKey<UserProgress>('userProgress'),
     loadKey<WorkoutLog[]>('workoutLog'),
     loadKey<Focuses>('focuses'),
     loadKey<ActiveSession | null>('activeSession'),
     loadKey<boolean>('noEquipmentMode'),
+    loadKey<boolean>('hasCalibrated'),
   ])
   if (up) userProgress.value = up
   if (log) workoutLog.value = log
   if (fc) focuses.value = fc
   if (sess !== undefined) activeSession.value = sess
   if (ne !== undefined) noEquipmentMode.value = ne
+  if (cal !== undefined) hasCalibrated.value = cal
 
   persisting = true
   hydrated.value = true
@@ -66,6 +70,10 @@ function installPersistEffects() {
   effect(() => {
     const v = noEquipmentMode.value
     if (persisting) saveKey('noEquipmentMode', v)
+  })
+  effect(() => {
+    const v = hasCalibrated.value
+    if (persisting) saveKey('hasCalibrated', v)
   })
 }
 

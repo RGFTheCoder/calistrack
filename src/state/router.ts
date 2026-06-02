@@ -6,6 +6,7 @@ export type Route =
   | { name: 'skills' }
   | { name: 'session' }
   | { name: 'history' }
+  | { name: 'calibrate' }
 
 function parseHash(): Route {
   const h = window.location.hash.replace(/^#\/?/, '')
@@ -14,6 +15,7 @@ function parseHash(): Route {
     case 'skills': return { name: 'skills' }
     case 'session': return { name: 'session' }
     case 'history': return { name: 'history' }
+    case 'calibrate': return { name: 'calibrate' }
     case '':
     case 'home':
     default:

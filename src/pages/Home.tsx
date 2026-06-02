@@ -1,5 +1,5 @@
 import { useComputed } from '@preact/signals'
-import { activeSession, noEquipmentMode, workoutLog } from '../state/store.ts'
+import { activeSession, noEquipmentMode, workoutLog, hasCalibrated } from '../state/store.ts'
 import { generateDailyPlan } from '../state/planner.ts'
 import { startSession } from '../state/session.ts'
 import { navigate } from '../state/router.ts'
@@ -27,6 +27,18 @@ export function Home() {
   return (
     <div class="stack">
       <h1>Today's Plan</h1>
+
+      {!hasCalibrated.value && (
+        <Card>
+          <CardHeader><CardTitle>👋 Welcome — let's calibrate</CardTitle></CardHeader>
+          <p class="text-small text-muted">
+            Before your first session, run a quick calibration so the daily plan starts you at the right level.
+          </p>
+          <Button variant="primary" onClick={() => navigate('calibrate')}>
+            Start Calibration
+          </Button>
+        </Card>
+      )}
 
       <Card>
         <div class="row row-between">
@@ -81,6 +93,15 @@ export function Home() {
             onClick={() => { startSession(); navigate('session') }}
           >
             Start Session
+          </Button>
+        )}
+        {hasCalibrated.value && (
+          <Button variant="ghost" size="sm" onClick={() => {
+            if (confirm('Re-run calibration? Your current progression levels will be overwritten.')) {
+              navigate('calibrate')
+            }
+          }}>
+            Re-calibrate
           </Button>
         )}
       </div>
