@@ -230,6 +230,14 @@ Advanced goals that can be "enabled" (added to your training focus) once minimum
 - [ ] Export/import data (JSON)
 - [ ] PWA offline support
 
+### Potential Yjs Integrations
+- **Multi-device sync**: treat the user's local training state as a Yjs document so sessions started on phone/desktop can merge cleanly after offline edits.
+- **Shared coaching plans**: let a coach and athlete collaboratively edit progression levels, notes, and skill/flexibility focuses without clobbering each other's changes.
+- **Collaborative workout templates**: store reusable routines as shared docs so training groups can iterate on the same template in real time.
+- **Live session handoff**: sync an in-progress session between devices so the user can start on one device and continue on another without manual export/import.
+- **Partner accountability**: add shared comments/check-ins on completed sessions or milestones, backed by Yjs awareness/presence for lightweight collaboration.
+- **Future mobile/web clients**: if CalisTrack expands beyond a single local-first web app, Yjs could provide conflict-free state replication while keeping offline-first behavior.
+
 ---
 
 ## Progression Adjustment Logic
