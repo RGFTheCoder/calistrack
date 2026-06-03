@@ -6,6 +6,7 @@ export type Route =
   | { name: 'skills' }
   | { name: 'session' }
   | { name: 'history' }
+  | { name: 'settings' }
   | { name: 'calibrate' }
 
 function parseHash(): Route {
@@ -15,6 +16,7 @@ function parseHash(): Route {
     case 'skills': return { name: 'skills' }
     case 'session': return { name: 'session' }
     case 'history': return { name: 'history' }
+    case 'settings': return { name: 'settings' }
     case 'calibrate': return { name: 'calibrate' }
     case '':
     case 'home':
