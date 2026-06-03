@@ -8,6 +8,7 @@ import { Skills } from './pages/Skills.tsx'
 import { Session } from './pages/Session.tsx'
 import { History } from './pages/History.tsx'
 import { Calibrate } from './pages/Calibrate.tsx'
+import { Settings } from './pages/Settings.tsx'
 
 export function App() {
   useEffect(() => {
@@ -27,6 +28,7 @@ export function App() {
     case 'skills': page = <Skills />; break
     case 'session': page = <Session />; break
     case 'history': page = <History />; break
+    case 'settings': page = <Settings />; break
     case 'calibrate': page = <Calibrate />; break
     case 'home':
     default: page = <Home />; break

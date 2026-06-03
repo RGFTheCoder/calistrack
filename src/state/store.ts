@@ -9,17 +9,25 @@ import type {
 
 export const hydrated = signal(false)
 
-export const userProgress: Signal<UserProgress> = signal({
-  progressions: {},
-  skills: {},
-})
+function defaultUserProgress(): UserProgress {
+  return {
+    progressions: {},
+    skills: {},
+  }
+}
+
+function defaultFocuses(): Focuses {
+  return {
+    skills: [],
+    flexibility: [],
+  }
+}
+
+export const userProgress: Signal<UserProgress> = signal(defaultUserProgress())
 
 export const workoutLog: Signal<WorkoutLog[]> = signal([])
 
-export const focuses: Signal<Focuses> = signal({
-  skills: [],
-  flexibility: [],
-})
+export const focuses: Signal<Focuses> = signal(defaultFocuses())
 
 export const activeSession: Signal<ActiveSession | null> = signal(null)
 
@@ -110,4 +118,23 @@ export function toggleFocus(kind: 'skills' | 'flexibility', id: string) {
   const list = cur[kind]
   const next = list.includes(id) ? list.filter(x => x !== id) : [...list, id]
   focuses.value = { ...cur, [kind]: next }
+}
+
+export function resetProgress(): void {
+  userProgress.value = defaultUserProgress()
+  hasCalibrated.value = false
+  activeSession.value = null
+}
+
+export function resetWorkoutHistory(): void {
+  workoutLog.value = []
+}
+
+export function resetAllData(): void {
+  userProgress.value = defaultUserProgress()
+  workoutLog.value = []
+  focuses.value = defaultFocuses()
+  activeSession.value = null
+  noEquipmentMode.value = false
+  hasCalibrated.value = false
 }

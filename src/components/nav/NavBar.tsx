@@ -5,6 +5,7 @@ const LINKS: Array<{ name: Route['name']; label: string }> = [
   { name: 'pathways', label: 'Pathways' },
   { name: 'skills', label: 'Skills' },
   { name: 'history', label: 'History' },
+  { name: 'settings', label: 'Settings' },
 ]
 
 export function NavBar() {
