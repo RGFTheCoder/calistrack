@@ -22,7 +22,7 @@
   --color-state-easy: #29b6f6;
   --color-state-locked: #5d626d;
   --color-state-unlocked: #ffa726;
-  --color-state-active: #4a9eff;
+  --color-state-active: var(--color-primary);
 }
 
 :root[data-theme='light'] {
