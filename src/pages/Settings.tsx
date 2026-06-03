@@ -1,4 +1,14 @@
-import { noEquipmentMode, hasCalibrated, resetProgress, resetWorkoutHistory, resetAllData } from '../state/store.ts'
+import type { JSX } from 'preact'
+import { accentOptions, themeOptions } from '../state/appearance.ts'
+import {
+  noEquipmentMode,
+  hasCalibrated,
+  themePreference,
+  accentColor,
+  resetProgress,
+  resetWorkoutHistory,
+  resetAllData,
+} from '../state/store.ts'
 import { navigate } from '../state/router.ts'
 import { Button, Card, CardHeader, CardTitle, CardSubtitle, ButtonGroup } from '../components/ui/index.ts'
 
@@ -7,6 +17,49 @@ export function Settings() {
     <div class="stack">
       <h1>Settings</h1>
       <p class="text-muted">Manage app preferences and reset local data.</p>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Appearance</CardTitle>
+          <CardSubtitle>Choose an accent color and how the app theme should behave.</CardSubtitle>
+        </CardHeader>
+        <div class="settings-section">
+          <div class="settings-field">
+            <span class="text-muted text-small">Theme</span>
+            <ButtonGroup>
+              {themeOptions.map(option => (
+                <Button
+                  key={option.value}
+                  size="sm"
+                  variant={themePreference.value === option.value ? 'primary' : 'secondary'}
+                  onClick={() => { themePreference.value = option.value }}
+                >
+                  {option.label}
+                </Button>
+              ))}
+            </ButtonGroup>
+          </div>
+
+          <div class="settings-field">
+            <span class="text-muted text-small">Accent color</span>
+            <div class="settings-accent-grid">
+              {accentOptions.map(option => (
+                <button
+                  key={option.value}
+                  type="button"
+                  class={`accent-option${accentColor.value === option.value ? ' is-selected' : ''}`}
+                  aria-pressed={accentColor.value === option.value}
+                  onClick={() => { accentColor.value = option.value }}
+                  style={{ '--accent-option-color': option.primary } as JSX.CSSProperties}
+                >
+                  <span class="accent-option-swatch" aria-hidden="true" />
+                  <span>{option.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Card>
 
       <Card>
         <CardHeader>

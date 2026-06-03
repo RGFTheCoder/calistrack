@@ -6,6 +6,8 @@ import {
   activeSession,
   noEquipmentMode,
   hasCalibrated,
+  themePreference,
+  accentColor,
   resetProgress,
   resetWorkoutHistory,
   resetAllData,
@@ -28,6 +30,8 @@ describe('store reset helpers', () => {
     }
     noEquipmentMode.value = true
     hasCalibrated.value = true
+    themePreference.value = 'dark'
+    accentColor.value = 'rose'
   })
 
   it('resetProgress clears level state and calibration', () => {
@@ -51,5 +55,7 @@ describe('store reset helpers', () => {
     expect(activeSession.value).toBeNull()
     expect(noEquipmentMode.value).toBe(false)
     expect(hasCalibrated.value).toBe(false)
+    expect(themePreference.value).toBe('system')
+    expect(accentColor.value).toBe('blue')
   })
 })
